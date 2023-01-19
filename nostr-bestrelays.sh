@@ -10,16 +10,36 @@ echo "      ├┴┐├┤ └─┐ │   ├┬┘├┤ │  ├─┤└┬
 echo "      └─┘└─┘└─┘ ┴   ┴└─└─┘┴─┘┴ ┴ ┴ └─┘";
 echo " "
 echo "  == 📡 https://github.com/gourcetools/nostr-bestrelays =="
-echo "  == 📡 Ping and find best nostr relays for you =="
+echo " "
+echo "  == 🏓 Ping and find best nostr relays for you =="
+echo " "
 echo "  ====================================================================== "
-
-
 
 # Delete a potentially old relays-list.txt
 rm -f relays-list.txt
+# Download a list of nostr relays from nostr.watch
 
+
+echo " "
+echo "  == 🌐 Downloading full relays list from nostr.watch =="
 # Download a list of nostr relays from nostr.watch
 wget -q https://raw.githubusercontent.com/dskvr/nostr-watch/develop/relays.yaml
+echo " "
+
+if [ -s relays.yaml ]
+then
+echo "  == ✅ Succes.  =="
+else
+echo "  == ❌ Download failed, restarting.  =="
+echo "  == ❌ Download failed, restarting..  =="
+echo "  == ❌ Download failed, restarting...  =="
+./nostr-bestrelays.sh
+fi
+
+
+echo " "
+echo "  ====================================================================== "
+echo " "
 
 # Remove the first line wich is " Relays :"
 sed -i "1d" relays.yaml
@@ -32,14 +52,19 @@ rm -f relays.yaml
 # Delete any relays that have a / , because it breaks the ping command 
 sed -i '/\//d' urllist.txt
 
+
+
 # Ping the urls in urllist.txt and sort them by ping
 cat urllist.txt | while read LINE
 do
-    echo "  == 🏓 Pinging $LINE =="
-    # Timeout 1 second. If it takes more than that, we dont want this relay in our list so no need to wait for a ping reply.
+    echo "  == 🏓 Pinging $LINE == "
+    # Timeout 1 second. If it takes more than that, we dont want this relay.
     # Output a list starting with pings in sorted.txt
     timeout 1 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
 done
+
+
+
 
 #Sort relays by ping
 sort -n sorted.txt > ipsorted.txt
@@ -68,12 +93,14 @@ rm -f urllist.txt
 # Add back wss:// to relays list
 sed -i 's/^/wss:\/\//' relays-list.txt
 echo "  ====================================================================== "
-echo "  == Best relays for you: "
+echo "  ==  👇 👇 👇   Best relays for you: 👇 👇 👇 "
 echo " "
 cat ./relays-list.txt
 echo " "
+echo "  ==  👆 👆 👆    Best relays for you 👆 👆 👆 "
+echo " "
 echo "  ====================================================================== "
-echo "  ==      📡 Saved 10 best relays in: ./relays-list.txt =="
-echo "  ==      📡 Thanks for using nostr-bestrelays == "
-echo "  ==      📡 Later :) =="
+echo "  ==      💾 Saved 10 best relays in: ./relays-list.txt =="
+echo "  ==      🙏 Thanks for using nostr-bestrelays == "
+echo "  ==      👋 Later :) =="
 echo "  ====================================================================== "
