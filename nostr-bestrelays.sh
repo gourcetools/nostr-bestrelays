@@ -35,7 +35,7 @@ sed -i '/\//d' urllist.txt
 # Ping the urls in urllist.txt and sort them by ping
 cat urllist.txt | while read LINE
 do
-    echo "  == Pinging $LINE =="
+    echo "  == 🏓 Pinging $LINE =="
     # Timeout 1 second. If it takes more than that, we dont want this relay in our list so no need to wait for a ping reply.
     # Output a list starting with pings in sorted.txt
     timeout 1 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
