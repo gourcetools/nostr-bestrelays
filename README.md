@@ -10,6 +10,7 @@
 # <b>✔️ How to use nostr-bestrelays?</b><br>
 git clone https://github.com/gourcetools/nostr-bestrelays<br>
 cd ./nostr-bestrelays<br>
+<b> maybe </b> sudo chmod a+rwx ./nostr-bestrelays.sh
 ./nostr-bestrelays.sh<br>
 <br>
 wait...<br>
