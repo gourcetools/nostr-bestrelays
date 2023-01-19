@@ -8,8 +8,9 @@ echo "      ┘└┘└─┘└─┘ ┴ ┴└─                 ";
 echo "      ┌┐ ┌─┐┌─┐┌┬┐  ┬─┐┌─┐┬  ┌─┐┬ ┬┌─┐";
 echo "      ├┴┐├┤ └─┐ │   ├┬┘├┤ │  ├─┤└┬┘└─┐";
 echo "      └─┘└─┘└─┘ ┴   ┴└─└─┘┴─┘┴ ┴ ┴ └─┘";
-echo "  == https://github.com/gourcetools/nostr-bestrelays =="
-echo "  == Ping and find best nostr relays for you =="
+echo " "
+echo "  == 📡 https://github.com/gourcetools/nostr-bestrelays =="
+echo "  == 📡 Ping and find best nostr relays for you =="
 echo "  ====================================================================== "
 
 
