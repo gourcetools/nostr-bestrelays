@@ -1,7 +1,6 @@
 
 echo " "
 echo " "
-echo "  ===================================================================="
 echo "      ┌┐┌┌─┐┌─┐┌┬┐┬─┐                 ";
 echo "      ││││ │└─┐ │ ├┬┘                 ";
 echo "      ┘└┘└─┘└─┘ ┴ ┴└─                 ";
@@ -9,11 +8,9 @@ echo "      ┌┐ ┌─┐┌─┐┌┬┐  ┬─┐┌─┐┬  ┌─┐
 echo "      ├┴┐├┤ └─┐ │   ├┬┘├┤ │  ├─┤└┬┘└─┐";
 echo "      └─┘└─┘└─┘ ┴   ┴└─└─┘┴─┘┴ ┴ ┴ └─┘";
 echo " "
-echo "  == 📡 https://github.com/gourcetools/nostr-bestrelays "
+echo "   📡 https://github.com/gourcetools/nostr-bestrelays "
+echo "          Ping and find best nostr relays for you "
 echo " "
-echo "  == 🏓 Ping and find best nostr relays for you "
-echo " "
-echo "  ===================================================================="
 
 # Delete a potentially old relays-list.txt
 rm -f relays-list.txt
@@ -38,7 +35,7 @@ fi
 
 
 echo " "
-echo "  ===================================================================="
+echo "  ======================================================= "
 echo " "
 
 # Remove the first line wich is " Relays :"
@@ -62,8 +59,11 @@ do
     # Output a list starting with pings in sorted.txt
     timeout 1 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
 done
-echo "  == ✅ Done pinging all relays.  "
+echo " "
+echo " "
 
+echo "   ✅ Done pinging all relays.  "
+echo " "
 
 #Sort relays by ping
 sort -n sorted.txt > ipsorted.txt
@@ -91,14 +91,13 @@ rm -f urllist.txt
 
 # Add back wss:// to relays list
 sed -i 's/^/wss:\/\//' relays-list.txt
-echo "  ===================================================================="
-echo "    👇 👇 👇   Best relays for you: 👇 👇 👇 "
+echo "==================================================== "
+echo "👇 👇 👇 👇   Best relays for you 👇 👇 👇 👇 "
 echo " "
 cat ./relays-list.txt
 echo " "
-echo "   👆 👆 👆    Best relays for you 👆 👆 👆 "
+echo "👆 👆 👆 👆    Best relays for you 👆 👆 👆 👆 "
 echo " "
-echo "  ==      💾 Saved 10 best relays in: ./relays-list.txt "
-echo "  ==      🙏 Thanks for using nostr-bestrelays "
-echo "  ==      👋 Later :) "
-echo "  ===================================================================="
+echo "     💾 Saved 10 best relays in: ./relays-list.txt "
+echo "     🙏 Thanks for using nostr-bestrelays "
+echo "  ======================================================= "
