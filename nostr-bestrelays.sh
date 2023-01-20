@@ -55,9 +55,9 @@ sed -i '/\//d' urllist.txt
 cat urllist.txt | while read LINE
 do
     echo "  == 🏓 Pinging $LINE "
-    # Timeout 1 second. If it takes more than that, we dont want this relay.
+    # Timeout 0.5 second. If it takes more than that, we dont want this relay.
     # Output a list starting with pings in sorted.txt
-    timeout 1 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
+    timeout 0.5 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
 done
 echo " "
 echo " "
@@ -91,13 +91,16 @@ rm -f urllist.txt
 
 # Add back wss:// to relays list
 sed -i 's/^/wss:\/\//' relays-list.txt
-echo "==================================================== "
+echo "================================================== "
 echo "👇 👇 👇 👇   Best relays for you 👇 👇 👇 👇 "
 echo " "
 cat ./relays-list.txt
 echo " "
 echo "👆 👆 👆 👆    Best relays for you 👆 👆 👆 👆 "
+echo "================================================== "
 echo " "
-echo "     💾 Saved 10 best relays in: ./relays-list.txt "
-echo "     🙏 Thanks for using nostr-bestrelays "
-echo "  ======================================================= "
+echo "  =========================================="
+echo "  💾 Saved 10 best relays in: "
+echo "       => nostr-bestrelays/relays-list.txt "
+echo "  🙏 Thank you for using nostr-bestrelays. "
+echo "  =========================================="
