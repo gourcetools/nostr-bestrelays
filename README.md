@@ -11,10 +11,10 @@
 
 # <b>✔️ How to use nostr-bestrelays?</b><br>
 
-` git clone https://github.com/gourcetools/nostr-bestrelays `
-` cd ./nostr-bestrelays `
- maybe ``` sudo chmod a+rwx ./nostr-bestrelays.sh `
-` ./nostr-bestrelays.sh `
+` git clone https://github.com/gourcetools/nostr-bestrelays ` <br>
+` cd ./nostr-bestrelays ` <br>
+ maybe ` sudo chmod a+rwx ./nostr-bestrelays.sh ` <br>
+` ./nostr-bestrelays.sh ` <br>
 
 <br>
 wait...<br>
