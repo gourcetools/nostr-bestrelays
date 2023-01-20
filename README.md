@@ -10,12 +10,11 @@
 <br>
 
 # <b>✔️ How to use nostr-bestrelays?</b><br>
+
 ``` git clone https://github.com/gourcetools/nostr-bestrelays<br>
-cd ./nostr-bestrelays
-```
+cd ./nostr-bestrelays ```
 <b> maybe </b> ``` sudo chmod a+rwx ./nostr-bestrelays.sh ```
-./nostr-bestrelays.sh
-```
+``` ./nostr-bestrelays.sh ```
 <br>
 wait...<br>
 you should have 10 fast relays in nostr-bestrelays/relays-list.txt<br>
