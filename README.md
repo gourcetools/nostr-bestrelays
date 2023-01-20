@@ -10,13 +10,18 @@
 <br>
 
 # <b>✔️ How to use nostr-bestrelays?</b><br>
-git clone https://github.com/gourcetools/nostr-bestrelays<br>
-cd ./nostr-bestrelays<br>
-<b> maybe </b> sudo chmod a+rwx ./nostr-bestrelays.sh <br>
-./nostr-bestrelays.sh<br>
+``` git clone https://github.com/gourcetools/nostr-bestrelays<br>
+cd ./nostr-bestrelays
+```
+<b> maybe </b> ``` sudo chmod a+rwx ./nostr-bestrelays.sh ```
+./nostr-bestrelays.sh
+```
 <br>
 wait...<br>
 you should have 10 fast relays in nostr-bestrelays/relays-list.txt<br>
 <br>
 <br>
-🙋‍♂️ Need help? Telegram: <b>@bitpaint</b> | Twitter: <b>@bitpaintclub<br></b>
+
+🙋‍♂️ Need help? 
+- Nostr: bitpaint@bitpaint.club | gourcetools@gourcetools.github.io
+- Telegram: <b>@bitpaint</b> | Twitter: <b>@bitpaintclub<br></b> | 
