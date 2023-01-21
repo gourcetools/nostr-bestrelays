@@ -73,7 +73,7 @@ rm sorted.txt
 
 # Remove pings from relay list.
 while read line; do
-	echo ${line} | sed -e 's/[^A-Za-z. ]//g'>>under1srelays.txt
+	echo ${line} | sed -E 's/^[0-9.]+//'>>under1srelays.txt
 done <ipsorted.txt
 
 # Delete ipsorted.txt, we dont need it anymore.
