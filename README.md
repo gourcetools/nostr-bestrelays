@@ -8,10 +8,9 @@ First he get a list of relays from https://nostr.watch  <br>
 then he ping relays with a timeout of 0.5 seconds, <br>
 then he takes all the output and save the 10 with slowest ping as relays-list.txt<br>
 <b>done.</b>
-# <b>⚙️ Requirements:</b><br>
-
-- `wget ping sed cat awk cut head` aka: nothing much  <br>
-- 
+</b>
+# <b>Requirements:</b><br>
+- `wget ping sed cat awk cut head` aka: nothing much :)  <br>
 <br>
 
 # <b>✔️ How to use nostr-bestrelays?</b><br>
