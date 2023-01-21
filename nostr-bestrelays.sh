@@ -57,7 +57,7 @@ do
     echo "  == 🏓 Pinging $LINE "
     # Timeout 0.5 second. If it takes more than that, we dont want this relay.
     # Output a list starting with pings in sorted.txt
-    timeout 0.5 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | sed "s/$/$LINE/" >> sorted.txt
+    timeout 0.5 ping -c 1 $LINE | tail -n 1 | awk '{print $4}' | cut -d '/' -f 2 | echo "+" | sed "s/$/$LINE/" >> pinged.txt
 done
 echo " "
 echo " "
@@ -73,7 +73,7 @@ rm sorted.txt
 
 # Remove pings from relay list.
 while read line; do
-	echo ${line} | sed -E 's/^[0-9.]+//'>>under1srelays.txt
+	echo ${line} | sed -E 'sed 's/.*+//'>>under1srelays.txt
 done <ipsorted.txt
 
 # Delete ipsorted.txt, we dont need it anymore.
