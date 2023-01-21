@@ -37,7 +37,7 @@ cat relays.yaml | sed 's/^.\{10\}//' > urllist.txt
 # Delete relays.yaml, we dont need it anymore.
 rm -f relays.yaml
 # Delete any relays that have a / , if it breaks the ping command 
-# sed -i '/\//d' urllist.txt
+sed -i '/\//d' urllist.txt
 
 # urllist.txt is ready for pinging
 echo " "
