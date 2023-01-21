@@ -16,11 +16,9 @@ then he takes all the output and save the 10 with slowest ping as relays-list.tx
 
 # <b>✔️ How to use nostr-bestrelays?</b><br>
 `curl -L https://raw.githubusercontent.com/gourcetools/nostr-bestrelays/master/nostr-bestrelays.sh | bash`
-<br>
 or<br>
-<br>
-`git clone https://github.com/gourcetools/nostr-bestrelays
-cd ./nostr-bestrelays ` 
+`git clone https://github.com/gourcetools/nostr-bestrelays` <br>
+` cd ./nostr-bestrelays ` 
  maybe ` sudo chmod a+rwx ./nostr-bestrelays.sh ` <br>
 ` ./nostr-bestrelays.sh ` <br>
 
