@@ -1,4 +1,3 @@
-
 echo " "
 echo " "
 echo "      ┌┐┌┌─┐┌─┐┌┬┐┬─┐                 ";
@@ -32,12 +31,13 @@ fi
 sed -i "1d" relays.yaml
 
 # Remove spaces and wss:// from relays so we can ping urls
-cat relays.yaml | sed 's/^.\{10\}//' > urllist.txt
 
-# Delete relays.yaml, we dont need it anymore.
-rm -f relays.yaml
+cut -c 11- relays.yaml > urllist.txt && rm -f relays.yaml
+
+
 # Delete any relays that have a / , if it breaks the ping command 
 sed -i '/\//d' urllist.txt
+
 
 # urllist.txt is ready for pinging
 echo " "
