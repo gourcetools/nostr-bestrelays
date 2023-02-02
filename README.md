@@ -4,8 +4,8 @@
 <img src="https://user-images.githubusercontent.com/120996278/213799411-6e57d622-172c-4df9-9a98-848a3ed5302e.png" alt="nostrbestrelays1" width="400px"><img src="https://user-images.githubusercontent.com/120996278/213799577-e81ffb69-3a77-4a85-8757-1ac1f237ff88.png" alt="nostrbestrelays2" width="400px"> 
 <br> <br>
 # <b>⚙️ Short explaination of how the script is working:</b><br>
-First he get a list of relays from https://nostr.watch  <br>
-then he ping relays with a timeout of 0.5 seconds, <br>
+First he get a list of online relays from https://api.nostr.watch/v1/online  <br>
+then he ping relays with a timeout of 0.250 seconds, <br>
 then he takes all the output and save the 10 with slowest ping as relays-list.txt<br>
 <b>done.</b>
 </b>
